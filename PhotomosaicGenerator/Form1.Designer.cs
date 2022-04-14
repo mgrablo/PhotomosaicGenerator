@@ -2,6 +2,8 @@
 {
 	partial class Form1
 	{
+
+		
 		/// <summary>
 		///  Required designer variable.
 		/// </summary>
@@ -29,6 +31,8 @@
 		private void InitializeComponent()
 		{
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.button1 = new System.Windows.Forms.Button();
+			this.label4 = new System.Windows.Forms.Label();
 			this.btnChooseFolder = new System.Windows.Forms.Button();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
@@ -38,7 +42,7 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-			this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+			this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
@@ -46,6 +50,8 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+			this.panel1.Controls.Add(this.button1);
+			this.panel1.Controls.Add(this.label4);
 			this.panel1.Controls.Add(this.btnChooseFolder);
 			this.panel1.Controls.Add(this.textBox2);
 			this.panel1.Controls.Add(this.label3);
@@ -60,6 +66,31 @@
 			this.panel1.Size = new System.Drawing.Size(230, 577);
 			this.panel1.TabIndex = 0;
 			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+			this.button1.FlatAppearance.BorderSize = 0;
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.button1.Location = new System.Drawing.Point(27, 449);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(180, 49);
+			this.button1.TabIndex = 9;
+			this.button1.Text = "Generate";
+			this.button1.UseVisualStyleBackColor = false;
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.label4.Location = new System.Drawing.Point(70, 398);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(74, 15);
+			this.label4.TabIndex = 8;
+			this.label4.Text = "0 Files found";
+			this.label4.Visible = false;
+			// 
 			// btnChooseFolder
 			// 
 			this.btnChooseFolder.Location = new System.Drawing.Point(174, 372);
@@ -68,11 +99,13 @@
 			this.btnChooseFolder.TabIndex = 7;
 			this.btnChooseFolder.Text = "button2";
 			this.btnChooseFolder.UseVisualStyleBackColor = true;
+			this.btnChooseFolder.Click += new System.EventHandler(this.btnChooseFolder_Click);
 			// 
 			// textBox2
 			// 
 			this.textBox2.Location = new System.Drawing.Point(27, 372);
 			this.textBox2.Name = "textBox2";
+			this.textBox2.ReadOnly = true;
 			this.textBox2.Size = new System.Drawing.Size(150, 23);
 			this.textBox2.TabIndex = 6;
 			// 
@@ -90,9 +123,12 @@
 			// 
 			// pictureBox1
 			// 
+			this.pictureBox1.BackColor = System.Drawing.Color.DarkSlateGray;
+			this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pictureBox1.Location = new System.Drawing.Point(27, 165);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(178, 124);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 4;
 			this.pictureBox1.TabStop = false;
 			// 
@@ -110,6 +146,7 @@
 			// 
 			this.textBox1.Location = new System.Drawing.Point(27, 136);
 			this.textBox1.Name = "textBox1";
+			this.textBox1.ReadOnly = true;
 			this.textBox1.Size = new System.Drawing.Size(150, 23);
 			this.textBox1.TabIndex = 2;
 			// 
@@ -141,10 +178,8 @@
 			// openFileDialog1
 			// 
 			this.openFileDialog1.FileName = "openFileDialog1";
-			// 
-			// openFileDialog2
-			// 
-			this.openFileDialog2.FileName = "openFileDialog2";
+			this.openFileDialog1.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif;" +
+    " *.png";
 			// 
 			// Form1
 			// 
@@ -175,6 +210,8 @@
 		private Button btnChooseFolder;
 		private TextBox textBox2;
 		private OpenFileDialog openFileDialog1;
-		private OpenFileDialog openFileDialog2;
+		private FolderBrowserDialog folderBrowserDialog1;
+		private Label label4;
+		private Button button1;
 	}
 }
