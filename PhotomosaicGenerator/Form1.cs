@@ -19,7 +19,8 @@ namespace PhotomosaicGenerator
 			DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
 			if (result == DialogResult.OK) // Test result.
 			{
-				string file = this.bigImageDir = openFileDialog1.FileName;
+				string file = openFileDialog1.FileName;
+				this.bigImageDir = file;
 				try
 				{
 					string text = File.ReadAllText(file);
@@ -41,7 +42,8 @@ namespace PhotomosaicGenerator
 			if (result == DialogResult.OK) // Test result.
 			{
 				string folder = folderBrowserDialog1.SelectedPath;
-				this.textBox2.Text = this.folderDir = folder;
+				this.textBox2.Text = folder;
+				this.folderDir = folder;
 				int fCount = Directory.GetFiles(folder).Length;
 				this.label4.Text = fCount.ToString() + " Files found";
 				this.label4.Visible = true;
