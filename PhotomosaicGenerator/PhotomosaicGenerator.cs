@@ -28,11 +28,44 @@ namespace PhotomosaicGenerator
 		{
 			using (Image<Rgba32> image = SixLabors.ImageSharp.Image.Load<Rgba32>(BigImageDir))
 			{
-				// Get array of big image squares
-				var rectangle = new SixLabors.ImageSharp.Rectangle(0, 0, squaresSize, squaresSize);
-				var test = Extract(image, rectangle);
-				var avg = GetAverageImageColor(test);
-				Console.WriteLine(avg.R);
+				// Get list of big image squares
+				List<Image<Rgba32>> squares = new List<Image<Rgba32>>();
+				int[] numOfSquares = { (int)Math.Ceiling((double)image.Height / squaresSize), (int)Math.Ceiling((double)image.Width / squaresSize) };
+				for (int y = 0, imgRemainingHeight = image.Height; y < numOfSquares[0]; y++)
+				{
+					var imgRemainingWidth = image.Width;
+					for (int x = 0; x < numOfSquares[1]; x++)
+					{
+						SixLabors.ImageSharp.Rectangle area = new();
+						area.X = x * squaresSize;
+						area.Y = y * squaresSize;
+						if (imgRemainingWidth < squaresSize && imgRemainingWidth > 0)
+						{
+							area.Width = imgRemainingWidth;
+						}
+						else
+						{
+							area.Width = squaresSize;
+						}
+
+						if (imgRemainingHeight < squaresSize && imgRemainingHeight > 0)
+						{
+							area.Height = imgRemainingHeight;
+						}
+						else
+						{
+							area.Height = squaresSize;
+						}
+
+						if (imgRemainingWidth <= 0 || imgRemainingHeight <= 0)
+						{
+							continue;
+						}
+						squares.Add(Extract(image, area));
+						imgRemainingWidth -= squaresSize;
+					}
+					imgRemainingHeight -= squaresSize;
+				}
 
 				// Get average color of each square
 
