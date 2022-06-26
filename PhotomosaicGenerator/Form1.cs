@@ -55,7 +55,14 @@ namespace PhotomosaicGenerator
 			PhotomosaicGenerator gen = new PhotomosaicGenerator();
 			gen.SetFolderDir(this.folderDir);
 			gen.SetBigImageDir(this.bigImageDir);
-			this.pictureBox2.Load(gen.Generate());
+			var imgURL = gen.Generate();
+			Image img;
+			using (var bmp = new Bitmap(imgURL))
+			{
+				img = new Bitmap(bmp);
+			}
+			this.pictureBox2.Image = img;
+			Console.WriteLine(imgURL);
 		}
 
 		[DllImport("kernel32.dll", SetLastError = true)]
