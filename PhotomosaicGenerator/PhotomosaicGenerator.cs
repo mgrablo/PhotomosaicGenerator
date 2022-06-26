@@ -67,6 +67,24 @@ namespace PhotomosaicGenerator
 					imgRemainingHeight -= squaresSize;
 				}
 
+				//// Pixalate
+				foreach (var square in squares)
+				{
+					Random rnd = new Random();
+					var color = GetAverageImageColor(square);
+
+					square.ProcessPixelRows(accessor =>
+					{
+						for (int y = 0; y < accessor.Height; y++)
+						{
+							Span<Rgba32> pixelRow = accessor.GetRowSpan(y);
+							foreach (ref Rgba32 pixel in pixelRow)
+							{
+								pixel = color;
+							}
+						}
+					});
+				}
 				// Get average color of each square
 
 				// Get array of small images squares
