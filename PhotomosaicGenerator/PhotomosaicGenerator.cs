@@ -1,5 +1,6 @@
 ﻿using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
+using SixLabors.ImageSharp.Processing;
 
 namespace PhotomosaicGenerator
 {
@@ -85,6 +86,20 @@ namespace PhotomosaicGenerator
 						}
 					});
 				}
+				//Place squares on big image
+				for (int i = 0, rows = 0; i < squares.Count; i++)
+				{
+					var sqInRow = (int)Math.Ceiling((double)image.Width / squaresSize);
+					if (i % sqInRow == 0)
+					{
+						rows++;
+					}
+
+					var smallImg = squares[i];
+					var point = new SixLabors.ImageSharp.Point((i % sqInRow) * squaresSize, (rows - 1) * squaresSize);
+
+					image.Mutate(x => x.DrawImage(smallImg, point, smallImgOpacity));
+				}
 				// Get average color of each square
 
 				// Get array of small images squares
@@ -103,7 +118,7 @@ namespace PhotomosaicGenerator
 			var height = sourceArea.Height;
 			sourceImage.ProcessPixelRows(targetImage, (sourceAccesor, targetAccessor) =>
 			{
-				for (int i = 0; i < height; i++)
+				for (int i = 0; i < sourceArea.Height; i++)
 				{
 					Span<Rgba32> sourceRow = sourceAccesor.GetRowSpan(sourceArea.Y + i);
 					Span<Rgba32> targetRow = targetAccessor.GetRowSpan(i);
