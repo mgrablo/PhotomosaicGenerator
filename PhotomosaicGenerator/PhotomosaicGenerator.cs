@@ -8,7 +8,10 @@ namespace PhotomosaicGenerator
 	{
 		private string? FolderDir;
 		private string? BigImageDir;
+
+		private float smallImgOpacity = 1;
 		private int squaresSize = 20;
+		private bool pixalate = false;
 
 		public void SetBigImageDir(string directory)
 		{
@@ -23,6 +26,11 @@ namespace PhotomosaicGenerator
 		public void SetSquaresSize(int size)
 		{
 			this.squaresSize = size;
+		}
+
+		public void SetSmallImgOpacity(float opacity)
+		{
+			this.smallImgOpacity = opacity;
 		}
 
 		public string Generate()
@@ -69,23 +77,52 @@ namespace PhotomosaicGenerator
 				}
 
 				//// Pixalate
-				foreach (var square in squares)
+				if (pixalate)
 				{
-					Random rnd = new Random();
-					var color = GetAverageImageColor(square);
-
-					square.ProcessPixelRows(accessor =>
+					foreach (var square in squares)
 					{
-						for (int y = 0; y < accessor.Height; y++)
+						// Get average color of each square
+						var color = GetAverageImageColor(square);
+
+						square.ProcessPixelRows(accessor =>
 						{
-							Span<Rgba32> pixelRow = accessor.GetRowSpan(y);
-							foreach (ref Rgba32 pixel in pixelRow)
+							for (int y = 0; y < accessor.Height; y++)
 							{
-								pixel = color;
+								Span<Rgba32> pixelRow = accessor.GetRowSpan(y);
+								foreach (ref Rgba32 pixel in pixelRow)
+								{
+									pixel = color;
+								}
 							}
-						}
-					});
+						});
+					}
 				}
+				else
+				// Get array of small images
+				{
+					var imgsDir = Directory.GetFiles(FolderDir);
+					Dictionary<SixLabors.ImageSharp.Image, Rgba32> dicImgColor = new();
+
+					//Resize and add imgs and their avg color to dictionary
+					foreach (var imgDir in imgsDir)
+					{
+						var img = SixLabors.ImageSharp.Image.Load<Rgba32>(imgDir);
+						ResizeOptions resizeOptions = new();
+						resizeOptions.Mode = ResizeMode.Min;
+						resizeOptions.Size = new(squaresSize, squaresSize);
+						img.Mutate(x => x.Resize(resizeOptions));
+						dicImgColor.Add(img, GetAverageImageColor(img));
+					}
+
+					foreach (var square in squares)
+					{
+						// Get average color of each square
+						var color = GetAverageImageColor(square);
+						var bestMatch = FindBestMatch(color, dicImgColor);
+						square.Mutate(x => x.DrawImage(bestMatch, 1.0f));
+					}
+				}
+
 				//Place squares on big image
 				for (int i = 0, rows = 0; i < squares.Count; i++)
 				{
@@ -100,14 +137,10 @@ namespace PhotomosaicGenerator
 
 					image.Mutate(x => x.DrawImage(smallImg, point, smallImgOpacity));
 				}
-				// Get average color of each square
-
-				// Get array of small images squares
-
-				// Get average colors of small images squares
 
 				image.Save(this.FolderDir + "\\photomosaic.jpg");
 			}
+
 			return this.FolderDir + "\\photomosaic.jpg";
 		}
 
@@ -115,7 +148,6 @@ namespace PhotomosaicGenerator
 		public Image<Rgba32> Extract(Image<Rgba32> sourceImage, SixLabors.ImageSharp.Rectangle sourceArea)
 		{
 			var targetImage = new Image<Rgba32>(sourceArea.Width, sourceArea.Height);
-			var height = sourceArea.Height;
 			sourceImage.ProcessPixelRows(targetImage, (sourceAccesor, targetAccessor) =>
 			{
 				for (int i = 0; i < sourceArea.Height; i++)
@@ -153,6 +185,40 @@ namespace PhotomosaicGenerator
 			avgColor[1] /= n;
 			avgColor[2] /= n;
 			return new Rgba32((byte)avgColor[0], (byte)avgColor[1], (byte)avgColor[2]);
+		}
+
+		private double GetPythagorasDistance3d(Rgba32 rgb1, Rgba32 rgb2)
+		{
+			float distance = 0;
+
+			distance = (rgb2.R - rgb1.R) * (rgb2.R - rgb1.R);
+			distance += (rgb2.G - rgb1.G) * (rgb2.G - rgb1.G);
+			distance += (rgb2.B - rgb1.B) * (rgb2.B - rgb1.B);
+
+			return Math.Sqrt(distance);
+		}
+
+		private SixLabors.ImageSharp.Image? FindBestMatch(Rgba32 targetColor, Dictionary<SixLabors.ImageSharp.Image, Rgba32> dicImgColor)
+		{
+			SixLabors.ImageSharp.Image? bestMatch = null;
+			double? bestMatchDistance = null;
+			foreach (var item in dicImgColor)
+			{
+				double colorDistance = 0;
+				for (int i = 0; i < 4; i++)
+				{
+					colorDistance += GetPythagorasDistance3d(targetColor, item.Value);
+				}
+				colorDistance /= 4;
+
+				if (bestMatchDistance == null || colorDistance < bestMatchDistance)
+				{
+					bestMatch = item.Key;
+					bestMatchDistance = colorDistance;
+				}
+			}
+
+			return bestMatch;
 		}
 	}
 }

@@ -44,6 +44,7 @@
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
+			this.label5 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -52,6 +53,7 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+			this.panel1.Controls.Add(this.label5);
 			this.panel1.Controls.Add(this.button1);
 			this.panel1.Controls.Add(this.label4);
 			this.panel1.Controls.Add(this.btnChooseFolder);
@@ -65,7 +67,7 @@
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(230, 577);
+			this.panel1.Size = new System.Drawing.Size(321, 618);
 			this.panel1.TabIndex = 0;
 			// 
 			// button1
@@ -75,7 +77,7 @@
 			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.button1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.button1.Location = new System.Drawing.Point(27, 449);
+			this.button1.Location = new System.Drawing.Point(23, 557);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(180, 49);
 			this.button1.TabIndex = 9;
@@ -117,7 +119,7 @@
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.label3.Location = new System.Drawing.Point(27, 319);
+			this.label3.Location = new System.Drawing.Point(23, 319);
 			this.label3.MaximumSize = new System.Drawing.Size(203, 60);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(160, 50);
@@ -186,19 +188,29 @@
 			// 
 			// pictureBox2
 			// 
-			this.pictureBox2.Location = new System.Drawing.Point(233, 5);
+			this.pictureBox2.Location = new System.Drawing.Point(596, 0);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(717, 572);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox2.TabIndex = 1;
 			this.pictureBox2.TabStop = false;
 			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
+			this.label5.Location = new System.Drawing.Point(30, 434);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(48, 15);
+			this.label5.TabIndex = 10;
+			this.label5.Text = "Pixelate";
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-			this.ClientSize = new System.Drawing.Size(951, 577);
+			this.ClientSize = new System.Drawing.Size(1314, 618);
 			this.Controls.Add(this.pictureBox2);
 			this.Controls.Add(this.panel1);
 			this.Name = "Form1";
@@ -228,5 +240,6 @@
 		private Label label4;
 		private Button button1;
 		private PictureBox pictureBox2;
+		private Label label5;
 	}
 }

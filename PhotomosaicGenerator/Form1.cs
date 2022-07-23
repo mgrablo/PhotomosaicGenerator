@@ -55,6 +55,7 @@ namespace PhotomosaicGenerator
 			PhotomosaicGenerator gen = new PhotomosaicGenerator();
 			gen.SetFolderDir(this.folderDir);
 			gen.SetBigImageDir(this.bigImageDir);
+			//gen.SetSmallImgOpacity(this.smallImgOpacity);
 			var imgURL = gen.Generate();
 			Image img;
 			using (var bmp = new Bitmap(imgURL))
