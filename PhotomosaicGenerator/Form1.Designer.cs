@@ -31,6 +31,9 @@
 		private void InitializeComponent()
 		{
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+			this.checkBox2 = new System.Windows.Forms.CheckBox();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.button1 = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
 			this.btnChooseFolder = new System.Windows.Forms.Button();
@@ -44,8 +47,8 @@
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.label5 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.SuspendLayout();
@@ -53,7 +56,9 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-			this.panel1.Controls.Add(this.label5);
+			this.panel1.Controls.Add(this.numericUpDown1);
+			this.panel1.Controls.Add(this.checkBox2);
+			this.panel1.Controls.Add(this.checkBox1);
 			this.panel1.Controls.Add(this.button1);
 			this.panel1.Controls.Add(this.label4);
 			this.panel1.Controls.Add(this.btnChooseFolder);
@@ -67,8 +72,56 @@
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(321, 618);
+			this.panel1.Size = new System.Drawing.Size(321, 697);
 			this.panel1.TabIndex = 0;
+			// 
+			// numericUpDown1
+			// 
+			this.numericUpDown1.DecimalPlaces = 2;
+			this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.numericUpDown1.Location = new System.Drawing.Point(27, 502);
+			this.numericUpDown1.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+			this.numericUpDown1.Name = "numericUpDown1";
+			this.numericUpDown1.Size = new System.Drawing.Size(180, 33);
+			this.numericUpDown1.TabIndex = 13;
+			this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+			this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+			// 
+			// checkBox2
+			// 
+			this.checkBox2.AutoSize = true;
+			this.checkBox2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.checkBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.checkBox2.ForeColor = System.Drawing.SystemColors.ControlLight;
+			this.checkBox2.Location = new System.Drawing.Point(23, 467);
+			this.checkBox2.Name = "checkBox2";
+			this.checkBox2.Size = new System.Drawing.Size(152, 29);
+			this.checkBox2.TabIndex = 12;
+			this.checkBox2.Text = "Extra accuracy";
+			this.checkBox2.UseVisualStyleBackColor = true;
+			this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+			// 
+			// checkBox1
+			// 
+			this.checkBox1.AutoSize = true;
+			this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlLight;
+			this.checkBox1.Location = new System.Drawing.Point(23, 432);
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.Size = new System.Drawing.Size(97, 29);
+			this.checkBox1.TabIndex = 11;
+			this.checkBox1.Text = "Pixelate";
+			this.checkBox1.UseVisualStyleBackColor = true;
+			this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
 			// 
 			// button1
 			// 
@@ -195,16 +248,6 @@
 			this.pictureBox2.TabIndex = 1;
 			this.pictureBox2.TabStop = false;
 			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.label5.Location = new System.Drawing.Point(30, 434);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(48, 15);
-			this.label5.TabIndex = 10;
-			this.label5.Text = "Pixelate";
-			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -218,6 +261,7 @@
 			this.Text = "Photomosaic Generator";
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.ResumeLayout(false);
@@ -240,6 +284,8 @@
 		private Label label4;
 		private Button button1;
 		private PictureBox pictureBox2;
-		private Label label5;
+		private CheckBox checkBox1;
+		private CheckBox checkBox2;
+		private NumericUpDown numericUpDown1;
 	}
 }

@@ -6,6 +6,9 @@ namespace PhotomosaicGenerator
 	{
 		private string bigImageDir = "";
 		private string folderDir = "";
+		private bool pixelate = false;
+		private bool extraAccuracy = false;
+		private float smallImgOpacity = 1.0f;
 
 		public Form1()
 		{
@@ -55,7 +58,10 @@ namespace PhotomosaicGenerator
 			PhotomosaicGenerator gen = new PhotomosaicGenerator();
 			gen.SetFolderDir(this.folderDir);
 			gen.SetBigImageDir(this.bigImageDir);
-			//gen.SetSmallImgOpacity(this.smallImgOpacity);
+			gen.SetSmallImgOpacity(this.smallImgOpacity);
+			gen.SetPixelate(this.pixelate);
+			gen.SetExtraAccuracy(this.extraAccuracy);
+
 			var imgURL = gen.Generate();
 			Image img;
 			using (var bmp = new Bitmap(imgURL))
@@ -69,5 +75,20 @@ namespace PhotomosaicGenerator
 		[DllImport("kernel32.dll", SetLastError = true)]
 		[return: MarshalAs(UnmanagedType.Bool)]
 		private static extern bool AllocConsole();
+
+		private void checkBox1_CheckedChanged(object sender, EventArgs e)
+		{
+			this.pixelate = this.checkBox1.Checked;
+		}
+
+		private void checkBox2_CheckedChanged(object sender, EventArgs e)
+		{
+			this.extraAccuracy = this.checkBox2.Checked;
+		}
+
+		private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+		{
+			this.smallImgOpacity = (float)this.numericUpDown1.Value;
+		}
 	}
 }
