@@ -8,7 +8,8 @@ namespace PhotomosaicGenerator
 		private string folderDir = "";
 		private bool pixelate = false;
 		private bool extraAccuracy = false;
-		private float smallImgOpacity = 1.0f;
+		private float smallImgOpacity = 100.0f;
+		private int squaresSize = 20;
 
 		public Form1()
 		{
@@ -58,9 +59,10 @@ namespace PhotomosaicGenerator
 			PhotomosaicGenerator gen = new PhotomosaicGenerator();
 			gen.SetFolderDir(this.folderDir);
 			gen.SetBigImageDir(this.bigImageDir);
-			gen.SetSmallImgOpacity(this.smallImgOpacity);
+			gen.SetSmallImgOpacity(this.smallImgOpacity / 100.0f);
 			gen.SetPixelate(this.pixelate);
 			gen.SetExtraAccuracy(this.extraAccuracy);
+			gen.SetSquaresSize(this.squaresSize);
 
 			var imgURL = gen.Generate();
 			Image img;
@@ -89,6 +91,11 @@ namespace PhotomosaicGenerator
 		private void numericUpDown1_ValueChanged(object sender, EventArgs e)
 		{
 			this.smallImgOpacity = (float)this.numericUpDown1.Value;
+		}
+
+		private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+		{
+			this.squaresSize = (int)this.numericUpDown2.Value;
 		}
 	}
 }
