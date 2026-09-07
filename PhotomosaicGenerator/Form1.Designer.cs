@@ -22,303 +22,286 @@
 			base.Dispose(disposing);
 		}
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-		/// <summary>
-		///  Required method for Designer support - do not modify
-		///  the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-			this.label6 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-			this.checkBox2 = new System.Windows.Forms.CheckBox();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
-			this.button1 = new System.Windows.Forms.Button();
-			this.label4 = new System.Windows.Forms.Label();
-			this.btnChooseFolder = new System.Windows.Forms.Button();
-			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.btnChooseBigPicture = new System.Windows.Forms.Button();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-			this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-			this.SuspendLayout();
-			// 
-			// panel1
-			// 
-			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-			this.panel1.Controls.Add(this.numericUpDown2);
-			this.panel1.Controls.Add(this.label6);
-			this.panel1.Controls.Add(this.label5);
-			this.panel1.Controls.Add(this.numericUpDown1);
-			this.panel1.Controls.Add(this.checkBox2);
-			this.panel1.Controls.Add(this.checkBox1);
-			this.panel1.Controls.Add(this.button1);
-			this.panel1.Controls.Add(this.label4);
-			this.panel1.Controls.Add(this.btnChooseFolder);
-			this.panel1.Controls.Add(this.textBox2);
-			this.panel1.Controls.Add(this.label3);
-			this.panel1.Controls.Add(this.pictureBox1);
-			this.panel1.Controls.Add(this.btnChooseBigPicture);
-			this.panel1.Controls.Add(this.textBox1);
-			this.panel1.Controls.Add(this.label2);
-			this.panel1.Controls.Add(this.label1);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-			this.panel1.Location = new System.Drawing.Point(0, 0);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(321, 697);
-			this.panel1.TabIndex = 0;
-			// 
-			// numericUpDown2
-			// 
-			this.numericUpDown2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.numericUpDown2.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-			this.numericUpDown2.Location = new System.Drawing.Point(238, 458);
-			this.numericUpDown2.Minimum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-			this.numericUpDown2.Name = "numericUpDown2";
-			this.numericUpDown2.Size = new System.Drawing.Size(58, 33);
-			this.numericUpDown2.TabIndex = 16;
-			this.numericUpDown2.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-			this.numericUpDown2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
-			// 
-			// label6
-			// 
-			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.label6.Location = new System.Drawing.Point(23, 460);
-			this.label6.MaximumSize = new System.Drawing.Size(203, 60);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(167, 25);
-			this.label6.TabIndex = 15;
-			this.label6.Text = "Small pictures size";
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.label5.Location = new System.Drawing.Point(23, 569);
-			this.label5.MaximumSize = new System.Drawing.Size(203, 60);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(76, 25);
-			this.label5.TabIndex = 14;
-			this.label5.Text = "Opacity";
-			// 
-			// numericUpDown1
-			// 
-			this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.numericUpDown1.Location = new System.Drawing.Point(238, 567);
-			this.numericUpDown1.Name = "numericUpDown1";
-			this.numericUpDown1.Size = new System.Drawing.Size(58, 33);
-			this.numericUpDown1.TabIndex = 13;
-			this.numericUpDown1.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-			this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-			// 
-			// checkBox2
-			// 
-			this.checkBox2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.checkBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.checkBox2.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.checkBox2.Location = new System.Drawing.Point(23, 532);
-			this.checkBox2.Name = "checkBox2";
-			this.checkBox2.Size = new System.Drawing.Size(273, 29);
-			this.checkBox2.TabIndex = 12;
-			this.checkBox2.Text = "Extra accuracy";
-			this.checkBox2.UseVisualStyleBackColor = true;
-			this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-			// 
-			// checkBox1
-			// 
-			this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.checkBox1.Location = new System.Drawing.Point(23, 497);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(273, 29);
-			this.checkBox1.TabIndex = 11;
-			this.checkBox1.Text = "Pixelate";
-			this.checkBox1.UseVisualStyleBackColor = true;
-			this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-			// 
-			// button1
-			// 
-			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-			this.button1.FlatAppearance.BorderSize = 0;
-			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.button1.Location = new System.Drawing.Point(23, 624);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(273, 49);
-			this.button1.TabIndex = 9;
-			this.button1.Text = "Generate";
-			this.button1.UseVisualStyleBackColor = false;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-			this.label4.Location = new System.Drawing.Point(123, 435);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(74, 15);
-			this.label4.TabIndex = 8;
-			this.label4.Text = "0 Files found";
-			this.label4.Visible = false;
-			// 
-			// btnChooseFolder
-			// 
-			this.btnChooseFolder.Location = new System.Drawing.Point(238, 409);
-			this.btnChooseFolder.Name = "btnChooseFolder";
-			this.btnChooseFolder.Size = new System.Drawing.Size(58, 23);
-			this.btnChooseFolder.TabIndex = 7;
-			this.btnChooseFolder.Text = "button2";
-			this.btnChooseFolder.UseVisualStyleBackColor = true;
-			this.btnChooseFolder.Click += new System.EventHandler(this.btnChooseFolder_Click);
-			// 
-			// textBox2
-			// 
-			this.textBox2.Location = new System.Drawing.Point(27, 409);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.ReadOnly = true;
-			this.textBox2.Size = new System.Drawing.Size(211, 23);
-			this.textBox2.TabIndex = 6;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.label3.Location = new System.Drawing.Point(23, 356);
-			this.label3.MaximumSize = new System.Drawing.Size(203, 60);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(160, 50);
-			this.label3.TabIndex = 5;
-			this.label3.Text = "Folder with small pictures";
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.BackColor = System.Drawing.Color.DarkSlateGray;
-			this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBox1.Location = new System.Drawing.Point(27, 165);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(269, 179);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox1.TabIndex = 4;
-			this.pictureBox1.TabStop = false;
-			// 
-			// btnChooseBigPicture
-			// 
-			this.btnChooseBigPicture.Location = new System.Drawing.Point(238, 136);
-			this.btnChooseBigPicture.Name = "btnChooseBigPicture";
-			this.btnChooseBigPicture.Size = new System.Drawing.Size(58, 23);
-			this.btnChooseBigPicture.TabIndex = 3;
-			this.btnChooseBigPicture.Text = "button1";
-			this.btnChooseBigPicture.UseVisualStyleBackColor = true;
-			this.btnChooseBigPicture.Click += new System.EventHandler(this.btnChooseBigPicture_Click);
-			// 
-			// textBox1
-			// 
-			this.textBox1.Location = new System.Drawing.Point(27, 136);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.ReadOnly = true;
-			this.textBox1.Size = new System.Drawing.Size(211, 23);
-			this.textBox1.TabIndex = 2;
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.label2.Location = new System.Drawing.Point(23, 108);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(103, 25);
-			this.label2.TabIndex = 1;
-			this.label2.Text = "Big picture";
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.BackColor = System.Drawing.Color.Transparent;
-			this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(23, 9);
-			this.label1.MaximumSize = new System.Drawing.Size(230, 90);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(192, 74);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Photomosaic Generator";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// openFileDialog1
-			// 
-			this.openFileDialog1.FileName = "openFileDialog1";
-			this.openFileDialog1.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif;" +
-    " *.png";
-			// 
-			// pictureBox2
-			// 
-			this.pictureBox2.Location = new System.Drawing.Point(327, 0);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(986, 697);
-			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox2.TabIndex = 1;
-			this.pictureBox2.TabStop = false;
-			// 
-			// Form1
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-			this.ClientSize = new System.Drawing.Size(1314, 697);
-			this.Controls.Add(this.pictureBox2);
-			this.Controls.Add(this.panel1);
-			this.Name = "Form1";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Photomosaic Generator";
-			this.panel1.ResumeLayout(false);
-			this.panel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-			this.ResumeLayout(false);
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            panel1 = new Panel();
+            numericUpDown2 = new NumericUpDown();
+            label6 = new Label();
+            label5 = new Label();
+            numericUpDown1 = new NumericUpDown();
+            checkBox2 = new CheckBox();
+            checkBox1 = new CheckBox();
+            button1 = new Button();
+            label4 = new Label();
+            btnChooseFolder = new Button();
+            textBox2 = new TextBox();
+            label3 = new Label();
+            pictureBox1 = new PictureBox();
+            btnChooseBigPicture = new Button();
+            textBox1 = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            openFileDialog1 = new OpenFileDialog();
+            folderBrowserDialog1 = new FolderBrowserDialog();
+            pictureBox2 = new PictureBox();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(24, 30, 54);
+            panel1.Controls.Add(numericUpDown2);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(numericUpDown1);
+            panel1.Controls.Add(checkBox2);
+            panel1.Controls.Add(checkBox1);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(btnChooseFolder);
+            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(btnChooseBigPicture);
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(321, 697);
+            panel1.TabIndex = 0;
+            // 
+            // numericUpDown2
+            // 
+            numericUpDown2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDown2.Increment = new decimal(new int[] { 10, 0, 0, 0 });
+            numericUpDown2.Location = new Point(238, 458);
+            numericUpDown2.Minimum = new decimal(new int[] { 20, 0, 0, 0 });
+            numericUpDown2.Name = "numericUpDown2";
+            numericUpDown2.Size = new Size(58, 33);
+            numericUpDown2.TabIndex = 16;
+            numericUpDown2.Value = new decimal(new int[] { 20, 0, 0, 0 });
+            numericUpDown2.ValueChanged += numericUpDown2_ValueChanged;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = SystemColors.ControlLight;
+            label6.Location = new Point(23, 460);
+            label6.MaximumSize = new Size(203, 60);
+            label6.Name = "label6";
+            label6.Size = new Size(167, 25);
+            label6.TabIndex = 15;
+            label6.Text = "Small pictures size";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = SystemColors.ControlLight;
+            label5.Location = new Point(23, 569);
+            label5.MaximumSize = new Size(203, 60);
+            label5.Name = "label5";
+            label5.Size = new Size(196, 25);
+            label5.TabIndex = 14;
+            label5.Text = "Small pictures opacity";
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDown1.Location = new Point(238, 567);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(58, 33);
+            numericUpDown1.TabIndex = 13;
+            numericUpDown1.Value = new decimal(new int[] { 100, 0, 0, 0 });
+            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
+            // 
+            // checkBox2
+            // 
+            checkBox2.CheckAlign = ContentAlignment.MiddleRight;
+            checkBox2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox2.ForeColor = SystemColors.ControlLight;
+            checkBox2.Location = new Point(23, 532);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(273, 29);
+            checkBox2.TabIndex = 12;
+            checkBox2.Text = "High accuracy";
+            checkBox2.UseVisualStyleBackColor = true;
+            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
+            // 
+            // checkBox1
+            // 
+            checkBox1.CheckAlign = ContentAlignment.MiddleRight;
+            checkBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBox1.ForeColor = SystemColors.ControlLight;
+            checkBox1.Location = new Point(23, 497);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(273, 29);
+            checkBox1.TabIndex = 11;
+            checkBox1.Text = "Only pixelate";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(0, 0, 192);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(23, 624);
+            button1.Name = "button1";
+            button1.Size = new Size(273, 49);
+            button1.TabIndex = 9;
+            button1.Text = "Generate";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.ForeColor = SystemColors.ControlDarkDark;
+            label4.Location = new Point(123, 435);
+            label4.Name = "label4";
+            label4.Size = new Size(74, 15);
+            label4.TabIndex = 8;
+            label4.Text = "0 Files found";
+            label4.Visible = false;
+            // 
+            // btnChooseFolder
+            // 
+            btnChooseFolder.Location = new Point(238, 409);
+            btnChooseFolder.Name = "btnChooseFolder";
+            btnChooseFolder.Size = new Size(58, 23);
+            btnChooseFolder.TabIndex = 7;
+            btnChooseFolder.Text = "Choose";
+            btnChooseFolder.UseVisualStyleBackColor = true;
+            btnChooseFolder.Click += btnChooseFolder_Click;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(27, 409);
+            textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
+            textBox2.Size = new Size(211, 23);
+            textBox2.TabIndex = 6;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.ControlLight;
+            label3.Location = new Point(23, 356);
+            label3.MaximumSize = new Size(203, 60);
+            label3.Name = "label3";
+            label3.Size = new Size(160, 50);
+            label3.TabIndex = 5;
+            label3.Text = "Folder with small pictures";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.DarkSlateGray;
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox1.Location = new Point(27, 165);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(269, 179);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            // 
+            // btnChooseBigPicture
+            // 
+            btnChooseBigPicture.Location = new Point(238, 136);
+            btnChooseBigPicture.Name = "btnChooseBigPicture";
+            btnChooseBigPicture.Size = new Size(58, 23);
+            btnChooseBigPicture.TabIndex = 3;
+            btnChooseBigPicture.Text = "Choose";
+            btnChooseBigPicture.UseVisualStyleBackColor = true;
+            btnChooseBigPicture.Click += btnChooseBigPicture_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(27, 136);
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(211, 23);
+            textBox1.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.ControlLight;
+            label2.Location = new Point(23, 108);
+            label2.Name = "label2";
+            label2.Size = new Size(103, 25);
+            label2.TabIndex = 1;
+            label2.Text = "Big picture";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(23, 9);
+            label1.MaximumSize = new Size(230, 90);
+            label1.Name = "label1";
+            label1.Size = new Size(192, 74);
+            label1.TabIndex = 0;
+            label1.Text = "Photomosaic Generator";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            openFileDialog1.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Location = new Point(327, 0);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(986, 697);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 1;
+            pictureBox2.TabStop = false;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(46, 51, 73);
+            ClientSize = new Size(1314, 697);
+            Controls.Add(pictureBox2);
+            Controls.Add(panel1);
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Photomosaic Generator";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ResumeLayout(false);
 
-		}
+        }
 
-		#endregion
+        #endregion
 
-		private Panel panel1;
+        private Panel panel1;
 		private Label label1;
 		private Button btnChooseBigPicture;
 		private TextBox textBox1;
